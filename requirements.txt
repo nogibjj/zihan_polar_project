@@ -18,6 +18,8 @@ uvicorn==0.18.3
 #data
 pandas
 polars
+fastapi>=0.100.0
+pydantic>=2.0.0
 ydata-profiling
 
 #visualization
