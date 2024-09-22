@@ -4,14 +4,12 @@ import matplotlib.pyplot as plt  # imports the package and calls it 'plt'
 from ydata_profiling import ProfileReport  # import it for EDA
 
 # get a rough view of what the data looks like - the list of all the world's billionaires from 2021
-df = pl.read_csv("Billionaire_2021.csv", schema_overrides={"Age": pl.Float64}, null_values=["N/A"])
+df = pd.read_csv("Billionaire_2021.csv", dtype={"Age": float}, na_values=["N/A"])
 print(df.head())
-
-df1 = df.to_pandas()
 
 # use dataprofiling to do EDA for this dataset
 report = ProfileReport(
-    df1,
+    df,
     title="Trending Books",
     dataset={
         "description": "This profiling report was generated for the EDA project.",
