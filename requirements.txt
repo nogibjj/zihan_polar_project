@@ -18,9 +18,9 @@ uvicorn==0.18.3
 #data
 pandas
 polars
-fastapi>=0.100.0
-pydantic>=2.0.0
-ydata-profiling
+fastapi==0.85.0
+pydantic<2.0.0,>=1.6.2
+ydata-profiling<4.0.0
 
 #visualization
 matplotlib
