@@ -30,5 +30,5 @@ report = ProfileReport(
 )
 
 # generate reports of different formats
-report.to_fill("report.html")
+report.to_file("report.html")
 report.to_markdown("report.md")
