@@ -24,3 +24,4 @@ ydata-profiling
 matplotlib
 
 setuptools
+ipywidgets
