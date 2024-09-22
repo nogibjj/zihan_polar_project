@@ -1,6 +1,4 @@
 import pandas as pd  # imports pandas and calls the imported version 'pd'
-import polars as pl  # imports polars and calls the imported version 'pl'
-import matplotlib.pyplot as plt  # imports the package and calls it 'plt'
 from ydata_profiling import ProfileReport  # import it for EDA
 
 # get a rough view of what the data looks like - the list of all the world's billionaires from 2021
