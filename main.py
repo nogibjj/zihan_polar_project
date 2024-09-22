@@ -1,13 +1,13 @@
 import pandas as pd  # imports pandas and calls the imported version 'pd'
 import polars as pl  # imports polars and calls the imported version 'pl'
 import matplotlib.pyplot as plt  # imports the package and calls it 'plt'
-from ydata_profiling import ProfileReport
+from ydata_profiling import ProfileReport  # import it for EDA
 
 # get a rough view of what the data looks like - the list of all the world's billionaires from 2021
 df = pl.read_csv("Billionaire_2021.csv")
 print(df.head())
 
-# use the
+# use dataprofiling to do EDA for this dataset
 report = ProfileReport(
     df,
     title="Trending Books",
@@ -27,5 +27,9 @@ report = ProfileReport(
     },
 )
 
+# generate the report
 report.to_notebook_iframe()
-report.to_file("books_data.html")
+
+# generate reports of different formats
+report.to_fill("report.html")
+report.to_markdown("report.md")

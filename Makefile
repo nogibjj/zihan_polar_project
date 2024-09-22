@@ -13,5 +13,8 @@ lint:
 
 deploy:
 	# deploy goes here
+
+generate_report:
+	python main.py
 		
-all: install lint test format deploy
+all: install lint test format deploy generate_report

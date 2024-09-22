@@ -18,6 +18,7 @@ uvicorn==0.18.3
 #data
 pandas
 polars
+ydata-profiling
 
 #visualization
 matplotlib
