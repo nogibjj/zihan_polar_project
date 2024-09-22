@@ -27,9 +27,6 @@ report = ProfileReport(
     },
 )
 
-# generate the report
-report.to_notebook_iframe()
-
 # generate reports of different formats
 report.to_fill("report.html")
 report.to_markdown("report.md")
