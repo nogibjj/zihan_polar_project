@@ -7,7 +7,7 @@ from ydata_profiling import ProfileReport  # import it for EDA
 df = pl.read_csv("Billionaire_2021.csv", schema_overrides={"Age": pl.Float64}, null_values=["N/A"])
 print(df.head())
 
-# df1 = df.to_pandas()
+df1 = df.to_pandas()
 
 # use dataprofiling to do EDA for this dataset
 report = ProfileReport(
