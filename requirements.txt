@@ -22,3 +22,5 @@ ydata-profiling
 
 #visualization
 matplotlib
+
+setuptools
