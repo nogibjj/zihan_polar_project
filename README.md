@@ -1,6 +1,8 @@
 # Analysis of the World's Billionaires in 2021
 [![Format](https://github.com/nogibjj/zihan_polar_project/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/format.yml)[![Install](https://github.com/nogibjj/zihan_polar_project/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/install.yml)[![Lint](https://github.com/nogibjj/zihan_polar_project/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/lint.yml)[![Test](https://github.com/nogibjj/zihan_polar_project/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/test.yml)
 
+[A quick tour of this project](Demo Video.mp4)
+
 ## Dataset Introduction
 
 The [data file](Billionaire_2021.csv) used in this analysis is a comprehensive list of all the world's billionaires as of 2021. This dataset is sourced from the prestigious Forbes Billionaires List, which is widely recognized as one of the most authoritative rankings of global wealth.
