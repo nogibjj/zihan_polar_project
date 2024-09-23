@@ -1,7 +1,7 @@
 import pandas as pd  # import pandas and call the imported version 'pd'
 from ydata_profiling import ProfileReport  # import it for EDA
 import matplotlib.pyplot as plt  # import the package and call it 'plt'
-import polars as pl # import polars and call it 'pl'
+import polars as pl  # import polars and call it 'pl'
 from lib import load_data
 
 # Read the data using polar and print the data & statistics
@@ -15,19 +15,23 @@ print(country_count)
 
 def get_statistics():
     count_values = country_count.select(
-    pl.col('Country').struct.field('count').alias('count'))
+        pl.col("Country").struct.field("count").alias("count")
+    )
     # get the statistics for the distribution of billionaires
-    stats = count_values.select([
-    pl.col('count').mean().alias("Mean"),
-    pl.col('count').median().alias("Median"),
-    pl.col('count').std().alias("Standard_Deviation")])
+    stats = count_values.select(
+        [
+            pl.col("count").mean().alias("Mean"),
+            pl.col("count").median().alias("Median"),
+            pl.col("count").std().alias("Standard_Deviation"),
+        ]
+    )
     print(stats)
 
 get_statistics()
 
 # get value from country_count DataFrame since its a pl dataframe
-countries = country_count.select(pl.col('Country').struct.field('Country')).to_series()
-counts = country_count.select(pl.col('Country').struct.field('count')).to_series()
+countries = country_count.select(pl.col("Country").struct.field("Country")).to_series()
+counts = country_count.select(pl.col("Country").struct.field("count")).to_series()
 # sort the value
 sorted_data = sorted(zip(countries, counts), key=lambda x: x[1], reverse=True)
 countries, counts = zip(*sorted_data)
@@ -42,7 +46,8 @@ def build_barplot():
     plt.ylabel("Number of Billionaires")
     plt.xticks(rotation=90)
     plt.tight_layout()
-    plt.savefig('Where Are Billionaires From (2021)')   ## generate and save the picture
+    plt.savefig("Where Are Billionaires From (2021)")  ## generate and save the picture
+
 
 build_barplot()
 
@@ -62,17 +67,13 @@ report = ProfileReport(
     },
     variables={
         "descriptions": {
-            "NetWorth": \
-                "A numerical value representing an individual's total wealth, \
+            "NetWorth": "A numerical value representing an individual's total wealth, \
                     expressed in billions of US dollars and preceded by a dollar sign.",
-            "Country": \
-                "The name of the nation where the individual primarily resides \
+            "Country": "The name of the nation where the individual primarily resides \
                     or holds citizenship.",
-            "Source": \
-                "The primary company or companies responsible for generating \
+            "Source": "The primary company or companies responsible for generating \
                     the individual's wealth.",
-            "Industry": \
-                "The broad economic sector or business category in which the \
+            "Industry": "The broad economic sector or business category in which the \
                     individual's primary source of wealth operates.",
         }
     },
@@ -80,6 +81,4 @@ report = ProfileReport(
 
 # generate the report
 report.to_notebook_iframe()
-
-# generate reports of different formats
-report.to_file("report.md")
+report.to_file("report.html")
