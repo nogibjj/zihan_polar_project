@@ -7,5 +7,5 @@ def load_data(dataset, null_values=["N/A"]):
     """
     Load data from a file and return a DataFrame.
     """
-    data = pl.read_csv(dataset, null_values)
+    data = pl.read_csv(dataset, null_values=null_values)
     return data
