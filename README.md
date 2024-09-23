@@ -1,9 +1,9 @@
 # Analysis of the World's Billionaires in 2021
-[![CI Python & Polars](https://github.com/nogibjj/zihan_descriptive_stats_project/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/zihan_descriptive_stats_project/actions/workflows/main.yml)
+[![Format](https://github.com/nogibjj/zihan_polar_project/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/format.yml)[![Install](https://github.com/nogibjj/zihan_polar_project/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/install.yml)[![Lint](https://github.com/nogibjj/zihan_polar_project/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/lint.yml)[![Test](https://github.com/nogibjj/zihan_polar_project/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/test.yml)
 
 ## Dataset Introduction
 
-The [data file](https://github.com/nogibjj/zihan_descriptive_stats_project/blob/main/Billionaire_2021.csv) used in this analysis is a comprehensive list of all the world's billionaires as of 2021. This dataset is sourced from the prestigious Forbes Billionaires List, which is widely recognized as one of the most authoritative rankings of global wealth.
+The [data file](Billionaire_2021.csv) used in this analysis is a comprehensive list of all the world's billionaires as of 2021. This dataset is sourced from the prestigious Forbes Billionaires List, which is widely recognized as one of the most authoritative rankings of global wealth.
 
 Key features of the dataset:
 - It includes billionaires from various countries and industries.
@@ -12,7 +12,7 @@ Key features of the dataset:
 
 This analysis aims to provide a descriptive statistical overview of the world's billionaire population, offering insights into wealth distribution, geographical trends, and other relevant patterns.
 
-If you need to refer to a **summary report** containing **detailed analysis**, **data**, and **charts**, [click here](https://github.com/nogibjj/zihan_descriptive_stats_project/blob/main/Panda_Descriptive_Project.md).
+If you need to refer to a **summary report** containing **detailed analysis**, **data**, and **charts**, [click here](Panda_Descriptive_Project.ipynb).
 
 ## Project Structure
 
@@ -56,7 +56,7 @@ To set up this project locally, follow these steps:
 ## Usage Instructions
 To use this project:
 
-1. **Run the `main.py` file** to test the `add(a, b)` function:
+1. **Run the `main.py` file** to check the data and descriptive statistics:
     ```bash
     python main.py
     ```
