@@ -1,4 +1,5 @@
-name: CI Python & Polars
+# test.yml
+name: Test
 on:
   push:
     branches: [ "main" ]
@@ -36,6 +37,3 @@ jobs:
 
     - name: format
       run: make format
-
-    - name: deploy
-      run: make deploy
