@@ -3,8 +3,8 @@ from ydata_profiling import ProfileReport  # import it for EDA
 import matplotlib.pyplot as plt  # imports the package and calls it 'plt'
 import polars as pl
 
-pl_df = pl.read_csv("Billionaire_2021.csv")
-
+# Read the data using polar and print the data
+pl_df = pl.read_csv("Billionaire_2021.csv", null_values=["N/A"])
 print(pl_df)
 print(pl_df.describe())
 
