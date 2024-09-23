@@ -25,6 +25,9 @@ If you need to refer to a **summary report** containing **detailed analysis**, *
 To generate the markdown file from the Jupyter Notebook, you can run the following code in the terminal:
 
 ```bash
+pip install jupyter nbconvert
+```
+```bash
 jupyter nbconvert --to markdown filename.ipynb
 ```
 
