@@ -2,9 +2,11 @@ import pandas as pd  # import pandas and call the imported version 'pd'
 from ydata_profiling import ProfileReport  # import it for EDA
 import matplotlib.pyplot as plt  # import the package and call it 'plt'
 import polars as pl # import polars and call it 'pl'
+from lib import load_data
 
 # Read the data using polar and print the data
-pl_df = pl.read_csv("Billionaire_2021.csv", null_values=["N/A"])
+pl_df = load_data("Billionaire_2021.csv", null_values=["N/A"])
+
 print(pl_df)
 print(pl_df.describe())
 
