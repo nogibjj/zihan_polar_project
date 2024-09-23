@@ -1,7 +1,7 @@
-import pandas as pd  # imports pandas and calls the imported version 'pd'
+import pandas as pd  # import pandas and call the imported version 'pd'
 from ydata_profiling import ProfileReport  # import it for EDA
-import matplotlib.pyplot as plt  # imports the package and calls it 'plt'
-import polars as pl
+import matplotlib.pyplot as plt  # import the package and call it 'plt'
+import polars as pl # import polars and call it 'pl'
 
 # Read the data using polar and print the data
 pl_df = pl.read_csv("Billionaire_2021.csv", null_values=["N/A"])
@@ -9,34 +9,45 @@ print(pl_df)
 print(pl_df.describe())
 
 # get the count of billionaires from each country
-country_count = pl_df.Country.value_counts()
+country_count = pl_df.select(pl.col("Country").value_counts())
 print(country_count)
 
 def get_statistics():
-    print(f'The size of the dataset is {pl_df.shape}')
-    print(f'The count fo billionaires from each country is {country_count}')
-    print(f'Mean of the count is {country_count.mean()}')
-    print(f'Median of the count is {country_count.median()}')
-    print(f'Standard deviation of the count is {country_count.std()}')
+    count_values = country_count.select(
+    pl.col('Country').struct.field('count').alias('count'))
+    # get the statistics for the distribution of billionaires
+    stats = count_values.select([
+    pl.col('count').mean().alias("Mean"),
+    pl.col('count').median().alias("Median"),
+    pl.col('count').std().alias("Standard_Deviation")])
+    print(stats)
 
 get_statistics()
+
+# get value from country_count DataFrame since its a pl dataframe
+countries = country_count.select(pl.col('Country').struct.field('Country')).to_series()
+counts = country_count.select(pl.col('Country').struct.field('count')).to_series()
+# sort the value
+sorted_data = sorted(zip(countries, counts), key=lambda x: x[1], reverse=True)
+countries, counts = zip(*sorted_data)
+
+# Create a bar plot of where billionaires are from
+def build_barplot():
+    # plot
+    plt.figure(figsize=(15, 12))
+    plt.bar(countries, counts)
+    plt.title("Where Are Billionaires From")
+    plt.xlabel("Country")
+    plt.ylabel("Number of Billionaires")
+    plt.xticks(rotation=90)
+    plt.tight_layout()
+    plt.savefig('Where Are Billionaires From (2021)')   ## generate and save the picture
+
+build_barplot()
 
 # get a rough view of what the data looks like - the list of all the world's billionaires from 2021
 df = pd.read_csv("Billionaire_2021.csv", dtype={"Age": float}, na_values=["N/A"])
 print(df.head())
-
-# Create a bar plot of where billionaires are from
-def build_barplot():
-    plt.figure(figsize=(15, 12))
-    plt.bar(country_count.index, country_count)
-    plt.title("Where Are Billionaires From (2021)")
-    plt.xlabel("Country")
-    plt.ylabel("Number of Millionaires")
-    plt.xticks(rotation=90)                             ## rotate the x-label to make it visible
-    plt.show()                                          ## for some reason, plt.show() don't work in the codespace but you won't have this problem when doing it locally
-    plt.savefig('Where Are Billionaires From (2021)')   ## generate and save the picture
-
-build_barplot()
 
 # use dataprofiling to do EDA for this dataset
 report = ProfileReport(
