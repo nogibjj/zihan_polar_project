@@ -4,9 +4,8 @@ import matplotlib.pyplot as plt  # import the package and call it 'plt'
 import polars as pl # import polars and call it 'pl'
 from lib import load_data
 
-# Read the data using polar and print the data
+# Read the data using polar and print the data & statistics
 pl_df = load_data("Billionaire_2021.csv", null_values=["N/A"])
-
 print(pl_df)
 print(pl_df.describe())
 
@@ -47,7 +46,7 @@ def build_barplot():
 
 build_barplot()
 
-# get a rough view of what the data looks like - the list of all the world's billionaires from 2021
+# get a rough view of what the data looks like
 df = pd.read_csv("Billionaire_2021.csv", dtype={"Age": float}, na_values=["N/A"])
 print(df.head())
 
@@ -63,10 +62,18 @@ report = ProfileReport(
     },
     variables={
         "descriptions": {
-            "NetWorth": "A numerical value representing an individual's total wealth, expressed in billions of US dollars and preceded by a dollar sign.",
-            "Country": "The name of the nation where the individual primarily resides or holds citizenship.",
-            "Source": "The primary company or companies responsible for generating the individual's wealth.",
-            "Industry": "The broad economic sector or business category in which the individual's primary source of wealth operates.",
+            "NetWorth": \
+                "A numerical value representing an individual's total wealth, \
+                    expressed in billions of US dollars and preceded by a dollar sign.",
+            "Country": \
+                "The name of the nation where the individual primarily resides \
+                    or holds citizenship.",
+            "Source": \
+                "The primary company or companies responsible for generating \
+                    the individual's wealth.",
+            "Industry": \
+                "The broad economic sector or business category in which the \
+                    individual's primary source of wealth operates.",
         }
     },
 )
