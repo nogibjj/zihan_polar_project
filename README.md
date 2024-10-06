@@ -1,7 +1,7 @@
 # Analysis of the World's Billionaires in 2021
 [![Format](https://github.com/nogibjj/zihan_polar_project/actions/workflows/format.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/format.yml)[![Install](https://github.com/nogibjj/zihan_polar_project/actions/workflows/install.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/install.yml)[![Lint](https://github.com/nogibjj/zihan_polar_project/actions/workflows/lint.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/lint.yml)[![Test](https://github.com/nogibjj/zihan_polar_project/actions/workflows/test.yml/badge.svg)](https://github.com/nogibjj/zihan_polar_project/actions/workflows/test.yml)
 
-**A quick tour of this project**([Demo Video.mp4](https://youtu.be/KVoo54Emnjs))
+**A quick tour of this project**([Demo Video](https://youtu.be/KVoo54Emnjs))
 
 ## Dataset Introduction
 
